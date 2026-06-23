@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>O Cenário dos Games & O Fenômeno Minecraft</title>
+    <style>
+        /* ==========================================================================
+           1. RESET & CONFIGURAÇÕES BASE (style.css)
+           ========================================================================== */
+        *, *::before, *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, sans-serif;
+            background-color: #0b0f19; /* Preto Profundo de Fundo */
+            color: #e2e8f0;            /* Texto Claro Confortável */
+            line-height: 1.6;
+            padding: 40px 20px;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        /* ==========================================================================
+           2. HEADER & ELEMENTOS DE DESTAQUE
+           ========================================================================== */
+        .main-header {
+            background: linear-gradient(135deg, #05070c 0%, #022329 100%);
+            border: 1px solid #1f2937;
+            border-bottom: 3px solid #00f0ff; /* Linha de Destaque em Ciano */
+            padding: 40px;
+            border-radius: 8px;
+            text-align: center;
+            margin-bottom: 40px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+        }
+
+        .main-header h1 {
+            color: #ffffff;
+            font-size: 2.5rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 10px;
+            text-shadow: 0 0 15px rgba(0, 240, 255, 0.3);
+        }
+
+        .main-header p {
+            color: #00f0ff; /* Ciano para o subtítulo */
+            font-size: 1.1rem;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            font-weight: 600;
+        }
+
+        .section-header {
+            border-left: 4px solid #00f0ff;
+            padding-left: 15px;
+            margin: 40px 0 20px 0;
+        }
+
+        .section-header h2 {
+            color: #ffffff;
+            font-size: 1.8rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* ==========================================================================
+           3. CARD GRID - 8 TÓPICOS DO CENÁRIO DOS GAMES
+           ========================================================================== */
+        .topics-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+
+        @media (max-width: 600px) {
+            .topics-grid { grid-template-columns: 1fr; }
+        }
+
+        .topic-card {
+            background-color: #111827; /* Preto/Cinza Escuro de Elemento */
+            border: 1px solid #1f2937;
+            border-top: 3px solid #00f0ff; /* Detalhe superior em Ciano */
+            padding: 25px;
+            border-radius: 6px;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .topic-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 24px rgba(0, 240, 255, 0.1);
+            border-color: #00f0ff;
+        }
+
+        .topic-card h3 {
+            color: #00f0ff; /* Ciano para Títulos de Cards */
+            font-size: 1.3rem;
+            margin-bottom: 12px;
+            font-weight: 700;
+        }
+
+        .topic-card p {
+            color: #94a3b8;
+            font-size: 1rem;
+            text-align: justify;
+        }
+
+        /* ==========================================================================
+           4. SEÇÃO EXTRA: MINECRAFT & SEÇÃO DE TABELAS
+           ========================================================================== */
+        .extra-intro {
+            background-color: #111827;
+            border: 1px solid #1f2937;
+            padding: 25px;
+            border-radius: 6px;
+            margin-bottom: 30px;
+        }
+
+        .extra-intro p {
+            color: #94a3b8;
+            font-size: 1.1rem;
+        }
+
+        .extra-intro em {
+            color: #ffffff;
+            font-style: normal;
+            font-weight: bold;
+        }
+
+        .table-responsive {
+            width: 100%;
+            overflow-x: auto;
+            border-radius: 6px;
+            border: 1px solid #1f2937;
+            background-color: #111827;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            text-align: left;
+        }
+
+        th {
+            background-color: #022329; /* Tom sutil escuro misturado com Ciano */
+            color: #00f0ff;
+            font-weight: 600;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            letter-spacing: 0.5px;
+            padding: 16px;
+            border-bottom: 2px solid #00f0ff;
+        }
+
+        td {
+            padding: 16px;
+            border-bottom: 1px solid #1f2937;
+            vertical-align: top;
+            font-size: 0.95rem;
+            color: #e2e8f0;
+        }
+
+        tr:nth-child(even) {
+            background-color: #0f172a; /* Efeito zebrado escuro */
+        }
+
+        tr:hover {
+            background-color: rgba(0, 240, 255, 0.03);
+        }
+
+        .creator-name {
+            color: #ffffff;
+            font-weight: 700;
+            font-size: 1.05rem;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .badge {
+            display: inline-block;
+            background-color: rgba(0, 240, 255, 0.1);
+            color: #00f0ff;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            border: 1px solid rgba(0, 240, 255, 0.2);
+            text-transform: uppercase;
+        }
+
+        /* ==========================================================================
+           5. RODAPÉ (FOOTER)
+           ========================================================================== */
+        .main-footer {
+            margin-top: 60px;
+            border-top: 1px solid #1f2937;
+            padding-top: 20px;
+            text-align: center;
+            color: #64748b;
+            font-size: 0.85rem;
+            letter-spacing: 1px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <header class="main-header">
+            <h1>O Cenário Global dos Games</h1>
+            <p>Tendências de Mercado & O Fenômeno Minecraft</p>
+        </header>
+
+        <section class="section-header">
+            <h2>8 Pilares da Indústria Atual</h2>
+        </section>
+
+        <main class="topics-grid">
+            <div class="topic-card">
+                <h3>1. A Ascensão dos E-sports</h3>
+                <p>Os esportes eletrônicos deixaram de ser apenas um passatempo para se tornarem arenas lotadas e transmissões com audiências que rivalizam com esportes tradicionais. Jogos como <em>League of Legends (LoL)</em>, <em>Counter-Strike (CS)</em> e <em>Valorant</em> movem ligas profissionais milionárias e criaram uma nova geração de atletas digitais.</p>
+            </div>
+
+            <div class="topic-card">
+                <h3>2. O Impacto dos Jogos Mobile</h3>
+                <p>Os smartphones democratizaram o acesso aos games. Hoje, títulos como <em>Free Fire</em>, <em>PUBG Mobile</em> e <em>Honor of Kings</em> representam uma das maiores fatias de faturamento da indústria, permitindo que qualquer pessoa com um celular jogue competitivamente.</p>
+            </div>
+
+            <div class="topic-card">
+                <h3>3. A Força dos Jogos Indie</h3>
+                <p>Nem só de grandes empresas (AAA) vive o mercado. Desenvolvedores independentes revolucionaram a indústria com criatividade e inovação. Sucessos como <em>Hollow Knight</em>, <em>Celeste</em> e <em>Hades</em> provam que uma boa ideia e jogabilidade afiada superam orçamentos bilionários.</p>
+            </div>
+
+            <div class="topic-card">
+                <h3>4. Realidade Virtual (VR) e Aumentada (AR)</h3>
+                <p>A tecnologia de imersão continua evoluindo. Óculos de VR oferecem experiências cada vez mais realistas e profundas, enquanto a realidade aumentada (como vimos em <em>Pokémon GO</em>) continua integrando o mundo virtual ao nosso cotidiano de forma única.</p>
+            </div>
+
+            <div class="topic-card">
+                <h3>5. Jogos como Serviço (Live Service)</h3>
+                <p>O modelo de comprar um jogo e jogá-lo até o fim mudou. Hoje, títulos como <em>Fortnite</em> e <em>Genshin Impact</em> funcionam como plataformas vivas, recebendo atualizações constantes, temporadas, eventos ao vivo e passes de batalha para manter a comunidade ativa por anos.</p>
+            </div>
+
+            <div class="topic-card">
+                <h3>6. Streaming e a Cultura de Criadores</h3>
+                <p>Plataformas como Twitch e YouTube transformaram a forma como consumimos jogos. Os streamers e YouTubers não apenas divertem, mas também ditam tendências: um jogo desconhecido pode estourar do dia para a noite se cair nas graças dos grandes criadores.</p>
+            </div>
+
+            <div class="topic-card">
+                <h3>7. Gráficos de Última Geração</h3>
+                <p>Com o avanço dos consoles (PS5, Xbox Series X/S) e das placas de vídeo modernas, tecnologias como <em>Ray Tracing</em> (iluminação realista) e motores gráficos como a <em>Unreal Engine 5</em> entregam visuais que frequentemente se confundem com a realidade.</p>
+            </div>
+
+            <div class="topic-card">
+                <h3>8. Narrativas Complexas e Cinema</h3>
+                <p>Os jogos se consolidaram como arte. Títulos como <em>The Last of Us</em>, <em>God of War</em> e <em>Red Dead Redemption 2</em> trazem roteiros profundos, atuações dignas de Oscar e debates filosóficos que expandem o meio para além do simples "vencer o jogo".</p>
+            </div>
+        </main>
+
+        <section class="section-header">
+            <h2>Extra: O Fenômeno Minecraft</h2>
+        </section>
+
+        <div class="extra-intro">
+            <p>Lançado oficialmente em 2011, <em>Minecraft</em> tornou-se o jogo mais vendido da história da humanidade. Mais do que um jogo de blocos, ele funciona como um laboratório de criatividade, arquitetura e lógica de engenharia (com a Redstone), transformando-se na principal engrenagem para o crescimento do ecossistema do YouTube.</p>
+        </div>
+
+        <div class="table-responsive">
+            <table>
+                <thead>
+                    <tr>
+                        <th style="width: 25%;">Criador / Canal</th>
+                        <th style="width: 25%;">Foco do Conteúdo</th>
+                        <th style="width: 50%;">Por que se destaca?</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            <span class="creator-name">AuthenticGames</span>
+                            <span class="badge">Nacional</span>
+                        </td>
+                        <td>Séries, Mods e Vlogs</td>
+                        <td>Um dos maiores pilares do Minecraft no Brasil, marcou gerações com séries focadas em modificações de jogos e conteúdo voltado para toda a família.</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <span class="creator-name">TazerCraft</span>
+                            <span class="badge">Nacional</span>
+                        </td>
+                        <td>Histórias e Desafios</td>
+                        <td>Conhecidos pela criatividade gigante em séries completas com roteiro e participações de grande destaque em servidores internacionais (como o QSMP).</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <span class="creator-name">Viniccius13</span>
+                            <span class="badge">Nacional</span>
+                        </td>
+                        <td>Redstone Técnico</td>
+                        <td>O mestre da automação no Brasil. Sua série "Em Busca da Casa Automática" é lendária, ensinando lógica e engenharia com blocos para milhões de pessoas.</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <span class="creator-name">Forever Player</span>
+                            <span class="badge">Nacional / Global</span>
+                        </td>
+                        <td>Survival e Megaprojetos</td>
+                        <td>Conhecido por seus projetos absurdamente gigantescos e complexos no modo sobrevivência puro, possuindo forte projeção na comunidade internacional.</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <span class="creator-name">Dream</span>
+                            <span class="badge">Internacional</span>
+                        </td>
+                        <td>Desafios e Speedruns</td>
+                        <td>Revolucionou o cenário global com a dinâmica "Minecraft Manhunt" e foi o criador do inovador e hiperpopular servidor Dream SMP.</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <span class="creator-name">Mumbo Jumbo</span>
+                            <span class="badge">Internacional</span>
+                        </td>
+                        <td>Engenharia de Redstone</td>
+                        <td>Uma das maiores referências mundiais em engenharia técnica dentro do Minecraft, ensinando mecanismos de forma divertida no servidor Hermitcraft.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <footer class="main-footer">
+            <p>Painel de Análise Técnica • Indústria de Games & Conteúdo Digital</p>
+        </footer>
+    </div>
+
+</body>
+</html>
