@@ -3,111 +3,155 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Explicações a Fundo</title>
+    <title>Explicações a Fundo - CraftMedia</title>
     <style>
+        :root {
+            --bg-primary: #050a14;
+            --bg-card: rgba(11, 19, 37, 0.9);
+            --accent-color: #00d2ff;
+            --text-main: #cbd5e1;
+            --text-bright: #ffffff;
+            --text-muted: #94a3b8;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
         body {
-            background-color: #050a14;
-            color: #cbd5e1;
-            font-family: system-ui, -apple-system, sans-serif;
+            background-color: var(--bg-primary);
+            color: var(--text-main);
+            font-family: 'Segoe UI', system-ui, sans-serif;
             padding: 40px 20px;
-            max-width: 800px;
+            background: linear-gradient(rgba(5, 10, 20, 0.9), rgba(5, 10, 20, 0.95)), 
+                        url('https://images.unsplash.com/photo-1511512578047-dfb367046420?q=80&w=1920') no-repeat center center fixed;
+            background-size: cover;
+        }
+
+        .container {
+            max-width: 900px;
             margin: 0 auto;
         }
-        h1 {
-            color: #00d2ff;
-            font-size: 24px;
-            text-transform: uppercase;
-            border-left: 4px solid #00d2ff;
-            padding-left: 15px;
+
+        header {
             margin-bottom: 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
-        .card {
-            background-color: #0b1325;
-            padding: 25px;
-            border-radius: 6px;
-            margin-bottom: 20px;
-            border-left: 3px solid transparent;
-            transition: border-color 0.2s;
+
+        h1 {
+            color: var(--text-bright);
+            font-size: 28px;
+            text-transform: uppercase;
+            border-left: 4px solid var(--accent-color);
+            padding-left: 15px;
+            letter-spacing: 1px;
         }
-        .card:hover {
-            border-left-color: #00d2ff;
-        }
-        .card h2 {
-            color: #00d2ff;
-            font-size: 16px;
-            margin-top: 0;
-            margin-bottom: 12px;
-        }
-        .card p {
-            font-size: 14px;
-            line-height: 1.6;
-            color: #94a3b8;
-            margin: 0;
-        }
-        .card p strong {
-            color: #ffffff;
-        }
-        .card p em {
-            color: #e2e8f0;
-            font-style: italic;
-        }
-        .back-link {
-            display: inline-block;
-            margin-top: 20px;
-            color: #94a3b8;
+
+        .btn-voltar {
+            color: var(--text-muted);
             text-decoration: none;
             font-size: 14px;
+            font-weight: 600;
+            text-transform: uppercase;
+            transition: color 0.3s;
         }
-        .back-link:hover {
-            color: #00d2ff;
+
+        .btn-voltar:hover {
+            color: var(--accent-color);
+        }
+
+        .card {
+            background: var(--bg-card);
+            padding: 30px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            border-left: 4px solid transparent;
+            border: 1px solid rgba(255, 255, 255, 0.03);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+            transition: border-left-color 0.2s, transform 0.2s;
+        }
+
+        .card:hover {
+            border-left-color: var(--accent-color);
+            transform: translateX(5px);
+        }
+
+        .card h2 {
+            color: var(--accent-color);
+            font-size: 18px;
+            margin-bottom: 12px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .card p {
+            font-size: 15px;
+            line-height: 1.7;
+            color: #a2b2c8;
+        }
+
+        .card p strong {
+            color: var(--text-bright);
+        }
+
+        .card p em {
+            color: var(--text-bright);
+            font-style: italic;
         }
     </style>
 </head>
 <body>
 
-    <h1>Explicações a Fundo</h1>
+    <div class="container">
+        <header>
+            <h1>Explicações a Fundo</h1>
+            <a href="index.html" class="btn-voltar">&larr; Voltar ao Início</a>
+        </header>
 
-    <div class="card">
-        <h2>Análise: A Ascensão dos E-sports</h2>
-        <p>Modalidades competitivas como <strong>League of Legends (LoL)</strong>, <strong>Counter-Strike (CS)</strong> e <strong>Valorant</strong> estruturaram ligas regionais e mundiais organizadas com regras estritas, movimentando salários profissionais elevados, arenas lotadas, patrocínios de marcas de tecnologia de consumo e grandes contratos de direitos de transmissão globais.</p>
+        <div class="card">
+            <h2>Análise: A Ascensão dos E-sports</h2>
+            <p>Modalidades competitivas como <strong>League of Legends (LoL)</strong>, <strong>Counter-Strike (CS)</strong> e <strong>Valorant</strong> estruturaram ligas regionais e mundiais organizadas com regras estritas, movimentando salários profissionais elevados, arenas lotadas, patrocínios de marcas de tecnologia de consumo e grandes contratos de direitos de transmissão globais.</p>
+        </div>
+
+        <div class="card">
+            <h2>Análise: O Impacto dos Jogos Mobile</h2>
+            <p>Dispositivos móveis tornaram-se os hardwares mais comuns do planeta. Títulos de alto engajamento como <em>Free Fire</em>, <em>PUBG Mobile</em> e <em>Honor of Kings</em> foram otimizados para operar em aparelhos acessíveis, viabilizando redes competitivas em mercados emergentes.</p>
+        </div>
+
+        <div class="card">
+            <h2>Análise: A Força dos Jogos Indie</h2>
+            <p>Estúdios reduzidos utilizam inovação mecânica e liberdade artística sem as restrições corporativas de títulos AAA. Projetos célebres como <em>Hollow Knight</em>, <em>Celeste</em> e <em>Hades</em> provaram que foco em design de regras de jogo refinado conquista audiências leais em todo o mundo.</p>
+        </div>
+
+        <div class="card">
+            <h2>Análise: Realidade Virtual (VR) e Aumentada (AR)</h2>
+            <p>Enquanto ecossistemas de VR refinam as taxas de atualização e resolução para evitar o enjoo de movimento, as interações de AR modificam o comportamento social, mapeando elementos digitais em tempo real no espaço geográfico real do usuário.</p>
+        </div>
+
+        <div class="card">
+            <h2>Análise: Jogos como Serviço (Live Service)</h2>
+            <p>O mercado de software migrou de compras unitárias para assinaturas e microtransações contínuas. Jogos como <em>Fortnite</em> e <em>Genshin Impact</em> mantêm engajamento contínuo através de atualizações, passes de temporada e narrativas sazonais mutáveis.</p>
+        </div>
+
+        <div class="card">
+            <h2>Análise: Streaming e a Cultura de Criadores</h2>
+            <p>A curadoria de novos jogos mudou. Plataformas de vídeo criaram influenciadores capazes de impulsionar as vendas e visibilidade de jogos independentes ignorados pelo marketing tradicional a patamares milionários de cópias digitais vendidas.</p>
+        </div>
+
+        <div class="card">
+            <h2>Análise: Gráficos de Última Geração</h2>
+            <p>O uso de Ray Tracing em tempo real para simulação óptica correta e o desenvolvimento de micropolígonos automatizados via motores gráficos modernos (como a Unreal Engine 5) permitem que os desenvolvedores criem mundos imersos sem perdas de desempenho crítico.</p>
+        </div>
+
+        <div class="card">
+            <h2>Análise: Narrativas Complexas e Cinema</h2>
+            <p>O meio interativo utiliza o controle do jogador para expandir a empatia dramática. Títulos como <em>The Last of Us</em> e <em>Red Dead Redemption 2</em> incorporam captura de performance avançada em atores reais para entregar nuances expressivas complexas.</p>
+        </div>
     </div>
-
-    <div class="card">
-        <h2>Análise: O Impacto dos Jogos Mobile</h2>
-        <p>Dispositivos móveis tornaram-se os hardwares mais comuns do planeta. Títulos de alto engajamento como <em>Free Fire</em>, <em>PUBG Mobile</em> e <em>Honor of Kings</em> foram otimizados para operar em aparelhos acessíveis, viabilizando redes competitivas em mercados emergentes.</p>
-    </div>
-
-    <div class="card">
-        <h2>Análise: A Força dos Jogos Indie</h2>
-        <p>Estúdios reduzidos utilizam inovação mecânica e liberdade artística sem as restrições corporativas de títulos AAA. Projetos célebres como <em>Hollow Knight</em>, <em>Celeste</em> e <em>Hades</em> provaram que foco em design de regras de jogo refinado conquista audiências leais em todo o mundo.</p>
-    </div>
-
-    <div class="card">
-        <h2>Análise: Realidade Virtual (VR) e Aumentada (AR)</h2>
-        <p>Enquanto ecossistemas de VR refinam as taxas de atualização e resolução para evitar o enjoo de movimento, as interações de AR modificam o comportamento social, mapeando elementos digitais em tempo real no espaço geográfico real do usuário.</p>
-    </div>
-
-    <div class="card">
-        <h2>Análise: Jogos como Serviço (Live Service)</h2>
-        <p>O mercado de software migrou de compras unitárias para assinaturas e microtransações contínuas. Jogos como <em>Fortnite</em> e <em>Genshin Impact</em> mantêm engajamento contínuo através de atualizações, passes de temporada e narrativas sazonais mutáveis.</p>
-    </div>
-
-    <div class="card">
-        <h2>Análise: Streaming e a Cultura de Criadores</h2>
-        <p>A curadoria de novos jogos mudou. Plataformas de vídeo criaram influenciadores capazes de impulsionar as vendas e visibilidade de jogos independentes ignorados pelo marketing tradicional a patamares milionários de cópias digitais vendidas.</p>
-    </div>
-
-    <div class="card">
-        <h2>Análise: Gráficos de Última Geração</h2>
-        <p>O uso de Ray Tracing em tempo real para simulação óptica correta e o desenvolvimento de micropolígonos automatizados via motores gráficos modernos (como a Unreal Engine 5) permitem que os desenvolvedores criem mundos imersos sem perdas de desempenho crítico.</p>
-    </div>
-
-    <div class="card">
-        <h2>Análise: Narrativas Complexas e Cinema</h2>
-        <p>O meio interativo utiliza o controle do jogador para expandir a empatia dramática. Títulos como <em>The Last of Us</em> e <em>Red Dead Redemption 2</em> incorporam captura de performance avançada em atores reais para entregar nuances expressivas complexas.</p>
-    </div>
-
-    <a href="index.html" class="back-link">← Voltar para a página inicial</a>
 
 </body>
 </html>
